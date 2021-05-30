@@ -62,6 +62,10 @@ export default class Quiz extends Component {
         btn.style.animation = 'hideIt 1s forwards'
         btn.style.display = "block"
         this.next()
+        this.setState({
+          wrong: (this.state.attempt - this.state.correct)+1
+        })
+        this.props.checkWrong()
     }
 }
 
