@@ -49,6 +49,7 @@ export default class Quiz extends Component {
         btn.innerText="Correct"
         btn.style.backgroundColor='green'
         btn.style.display="block"
+        btn.style.border=" 1px solid green"
         this.next()
         this.setState({
             correct : this.state.correct+1
@@ -61,6 +62,7 @@ export default class Quiz extends Component {
         btn.style.backgroundColor = 'red'
         btn.style.animation = 'hideIt 1s forwards'
         btn.style.display = "block"
+        btn.style.border=" 1px solid red"
         this.next()
         this.setState({
           wrong: (this.state.attempt - this.state.correct)+1
