@@ -46,7 +46,7 @@ export default class Quiz extends Component {
     this.props.isAttempt()
     if (this.state.datas[this.state.index_value].answer===ans)
     {   
-        btn.innerText="Correct"
+        btn.innerText="Correct!"
         btn.style.backgroundColor='green'
         btn.style.display="block"
         btn.style.border=" 1px solid green"
@@ -58,7 +58,7 @@ export default class Quiz extends Component {
     }
     else
     {
-        btn.innerText = "Wrong"
+        btn.innerText = "Wrong!!!"
         btn.style.backgroundColor = 'red'
         btn.style.animation = 'hideIt 1s forwards'
         btn.style.display = "block"
@@ -101,7 +101,7 @@ componentDidMount(){
   render() {
     const isdata = this.state.datas.length
     const resultdata = this.state.datas[this.state.index_value]
-    console.log(this.state.correct)
+    //console.log(this.state.correct)
     return (
       <>
         <div className="quiz-parent">
@@ -113,9 +113,10 @@ componentDidMount(){
             <div id="quiz-container">
               <div className="head">Question</div>
               <div className="question-num">
+                {/* // timer */}
+                <p className="timer-text">Time Left: <span className="timer">{this.state.currentCount}</span></p>
                 <p id="numbers">{resultdata.id} of 10</p>
                 <p id="question">{resultdata.question}</p>
-                <p>{this.state.currentCount}</p>
               </div>
               <div className="options-container">
                 <div className="option-cont-1">
